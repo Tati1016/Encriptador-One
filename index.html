@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador Innovador</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">
+                <img src="Logo-Alura.png" alt="Logo-Alura" class="logo">
+            </h1>
+            <h1>Encriptador de texto</h1>
+            <button class="toggle-mode" onclick="toggleMode()">
+                <i id="mode-icon" class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="contenedorPrincipal">
+        <div class="textarea">
+            <textarea name="Entrada" id="textoIngresado" onkeypress="verificarTexto(event)" placeholder="Ingresa aquí tu texto... Solo letras minúsculas y sin acentos" autofocus onfocus="focusTextoIngresado()"></textarea>
+        </div>
+        <div class="divisionBotones">
+            <button class="botones" id="encriptar" onclick="encriptar()">Encriptar</button>
+            <button class="botones" id="desencriptar" onclick="desencriptar()">Desencriptar</button>
+            <button class="botones" id="resetear" onclick="resetear()">Resetear</button>
+        </div>
+        <div class="textarea">
+            <textarea name="Entrada" id="textoAMostrar" disabled></textarea>
+        </div>
+        <div class="divisionBotones">
+            <button class="botones" id="copiar" onclick="copiar()" disabled>Copiar</button>
+            <div id="mensaje-copiado" class="mensaje">¡Texto copiado!</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Creado por [Tatiana Camacho], 2024</p>
+    </footer>
+
+    <script>
+        // Funcionalidad del modo oscuro/claro
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode');
+            const modeIcon = document.getElementById('mode-icon');
+            if (document.body.classList.contains('dark-mode')) {
+                modeIcon.classList.remove('fa-moon');
+                modeIcon.classList.add('fa-sun');
+            } else {
+                modeIcon.classList.remove('fa-sun');
+                modeIcon.classList.add('fa-moon');
+            }
+        }
+
+        // Funcionalidad de resetear
+        function resetear() {
+            document.getElementById('textoIngresado').value = '';
+            document.getElementById('textoAMostrar').value = '';
+            document.getElementById('copiar').disabled = true;
+            document.getElementById('mensaje-copiado').style.display = 'none';
+        }
+
+        // Función de encriptar
+        function encriptar() {
+            const texto = document.getElementById('textoIngresado').value;
+            const textoEncriptado = texto
+                .replace(/e/g, "enter")
+                .replace(/i/g, "imes")
+                .replace(/a/g, "ai")
+                .replace(/o/g, "ober")
+                .replace(/u/g, "ufat");
+
+            document.getElementById('textoAMostrar').value = textoEncriptado;
+            document.getElementById('textoAMostrar').style.display = 'block';
+            document.getElementById('copiar').disabled = false;
+        }
+
+        // Función de desencriptar
+        function desencriptar() {
+            const texto = document.getElementById('textoIngresado').value;
+            const textoDesencriptado = texto
+                .replace(/enter/g, "e")
+                .replace(/imes/g, "i")
+                .replace(/ai/g, "a")
+                .replace(/ober/g, "o")
+                .replace(/ufat/g, "u");
+
+            document.getElementById('textoAMostrar').value = textoDesencriptado;
+            document.getElementById('textoAMostrar').style.display = 'block';
+            document.getElementById('copiar').disabled = false;
+        }
+
+        // Función para copiar el texto
+        function copiar() {
+            const texto = document.getElementById('textoAMostrar');
+            texto.select();
+            document.execCommand('copy');
+            document.getElementById('mensaje-copiado').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('mensaje-copiado').style.display = 'none';
+            }, 2000);
+        }
+
+        // Verificar texto (validación de entrada)
+        function verificarTexto(event) {
+            const char = String.fromCharCode(event.which);
+            const regex = /^[a-z\s]*$/;
+            if (!regex.test(char)) {
+                event.preventDefault();
+                alert("Solo se permiten letras minúsculas y sin acentos");
+            }
+        }
+
+        // Enfoque en el campo de texto
+        function focusTextoIngresado() {
+            document.getElementById('textoIngresado').focus();
+        }
+    </script>
+</body>
+</html>

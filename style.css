@@ -1,0 +1,208 @@
+body {
+    background-color: rgba(71, 204, 224, 0.475); /* Color de fondo con opacidad */
+    overflow-y: auto; /* Scroll vertical */
+    overflow-x: hidden; /* Ocultar scroll horizontal */
+    width: 100vw; /* Ancho completo */
+    height: 100vh; /* Alto completo */
+    font-family: "Nunito", sans-serif; /* Fuente personalizada */
+    font-style: normal;
+    margin: 0; /* Eliminar margen por defecto */
+}
+
+header {
+    background-color: #ffffffa8; /* Fondo semi-transparente */
+    padding: 20px 0; /* Espacio interno */
+    color: rgb(16, 72, 100); /* Color de texto */
+    font-size: 50px; /* Tamaño de fuente */
+    display: flex; /* Flexbox para alineación */
+    align-items: center; /* Alineación vertical */
+    justify-content: center; /* Centrado horizontal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1); /* Línea de separación */
+}
+
+.container {
+    display: flex; /* Permite una distribución y manejo de elementos más dinamica*/
+    width: 100vw; /* Asigna el width al view_width máximo */
+    justify-content: space-between; /* Espaciado entre elementos */
+}
+
+.logo {
+    float: left; /* Posiciona la imagen alineándola a la izquierda */
+    margin-right: 30px; /* Añade un espacio en el exterior a la derecha, separando este elemento del siguiente a la derecha */
+    margin-left: 30px; /* Añade un espacio en el exterior a la izquierda, separando este elemento del siguiente a la izquierda */
+}
+
+header h1 {
+    float: left; /* posiciona el elemento a la izquierda */
+}
+
+.contenedorPrincipal {
+    display: grid; /* cuadrícula */
+    grid-template-columns: 2fr 1fr 2fr; /* Divide el espacio en tres partes iguales */
+    grid-gap: 10px; /* Establece la distancia entre las secciones*/
+    margin-top: 2.5%; /* Añade un margen externo en la parte superior, creando espacio entre este elemento y el que está por encima */
+    margin-bottom: 2%; /* Añade un margen externo en la parte inferior, creando espacio entre este elemento y el que está por debajo */
+    margin-left: 2.5%; /* Añade un margen externo a la izquierda, creando espacio entre este elemento y el que está a la izquierda */
+    margin-right: 2%; /* Añade un margen externo a la derecha, creando espacio entre este elemento y el que está a la derecha */
+}
+
+.contenedorPrincipal textarea{
+    max-width: 335px; /* Asigna el máximo width que puede tener el elemento */
+    max-height: 550px; /* Asigna al máximo height el height al view_height */
+    width: 85%; /* Establece el width del elemento al 85% */
+    height: 350px;
+    resize: none;
+    border-radius: 10px; /* Crea un borde de 10 pixeles al elemento */
+    padding: 1.5%; /* Asigna un espacio interno en todas las direcciones de 1.5% el tamaño de la página */
+    background-color: rgba(255, 255, 255, 0.8); /* Define el color de fondo con opacidad */
+    font-size: 22px; /* Establece el tamaño de la fuente a 22 pixeles */
+    margin-top: 60px; /* Crea un margen externo en la parte superior del elemento que crea el margen y el que está arriba */
+    margin-left: 5%; /* Crea un margen externo a la izquierda entre el elemento que crea el margen y el que está a su izquierda */
+    margin-right: 5%; /* Crea un margen externo a la derecha entre el elemento que crea el margen y el que está a su derecha */
+    margin-bottom: 60px; /* Crea un margen externo en la parte inferior del elemento que crea el margen y el que está debajo */
+    font-family: "Nunito", sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del textarea */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Borde sutil */
+    transition: all 0.3s ease; /* Transición suave para todos los cambios */
+    cursor: text; /* Cambiar cursor a icono de texto */
+}
+
+.contenedorPrincipal textarea:focus {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Aumentar la sombra al hacer foco */
+    border-color: rgba(59, 16, 100, 0.5); /* Cambiar el color del borde al hacer foco */
+    outline: none; /* Eliminar el borde azul predeterminado en algunos navegadores */
+}
+
+::selection {
+    background-color: rgba(71, 204, 224, 0.3); /* Fondo del texto seleccionado */
+    color: #104864; /* Color del texto seleccionado */
+}
+
+.divisionBotones {  
+    display: flex; /* Permite una distribución y manejo de elementos más dinamica*/
+    flex-direction: column;
+    justify-content: space-evenly; /* Espacio entre los elementos */
+    align-items: center;  /* Centrado horizontal */
+}
+
+.divisionBotones button{
+    width: 53%; /* Establece el width del elemento al 53% */
+}
+
+.botones {
+    padding: 15px 0; /* Asigna un espacio interno de 15px a la parte superior e inferior */
+    font-size: 18px; /* Establece el tamaño de la fuente a 18 pixeles */
+    font-weight: bold; /* Establece en negrilla la fuente */
+    color:rgb(255, 255, 255); /* Asigna el color a la fuente del elemento */ 
+    background: rgb(46, 197, 96); /* Establece el fondo del elemento */
+    border:none; /* Elimina todos los bordes del elemento */
+    border-radius: 10px; /* Crea un borde de 10 pixeles al elemento */
+    transition: 1s all; /* Genera la transición */
+    cursor:pointer; /* Cambia el cursor a una mano cuando está sobre el elemento */
+    font-family: "Nunito", sans-serif; /* Asigna un fuenta de letra diferente a la predeterminada */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 10px rgba(46, 197, 96, 0.5); /* Sombra suave y resplandor */
+    animation: pulse 2s infinite; /* Añadir la animación de pulsación al botón */
+}
+
+.botones:hover{
+    background: darkorange; /* Establece el fondo del elemento */
+    transform: scale(1.2); /* Aumenta 120% el tamaño del elemento */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Aumentar la sombra para darle más profundidad */
+}
+
+.botones[disabled]{
+    display: none; /* Los botones deshabilitados no son mostrados en la página hasta que sean activados */
+}
+
+.botones {
+    background: linear-gradient(135deg, #42f56f, #d147bf); /* Gradiente de color */
+}
+
+
+.mensaje {
+    justify-content: center; /* Centra los elementos horizontalmente dentro del contenedor */
+    text-align: center; /* Centra el texto horizontalmente dentro del elemento */
+    display: none; /* Oculta el elemento y su contenido */
+    font-size: 25px; /* Establece el tamaño de la fuente a 25 píxeles */
+    color: rgb(16, 72, 100); /* Asigna el color a la fuente del elemento */ 
+    font-weight: bold;
+    background-color: rgba(71, 204, 224, 0.15); /* Añade un fondo ligeramente visible para resaltar el mensaje */
+    border-radius: 15px; /* Bordes redondeados para suavizar el diseño */
+    padding: 15px; /* Espaciado interno para hacer el mensaje más destacado */
+    box-shadow: 0 4px 8px rgba(105, 39, 39, 0.1); /* Añade una sombra suave para dar profundidad */
+    opacity: 0; /* Oculta el mensaje por defecto */
+    transform: translateY(-20px); /* Desplaza el mensaje hacia arriba para el efecto de entrada */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Suave transición para la opacidad y el movimiento */
+}
+
+.mensaje.mostrar {
+    display: block; /* Mostrar el mensaje */
+    opacity: 1; /* Hace visible el mensaje */
+    transform: translateY(0); /* Devuelve el mensaje a su posición original */
+}
+
+/* Adaptar contenido para pantallas de hasta 1150px de ancho */
+@media screen and (max-width: 1151px) {
+    .contenedorPrincipal {
+        display: grid; /* Configura el contenedor como una cuadrícula */
+        grid-template-columns: 2.7fr 1fr 2.7fr; /* Asigna tres columnas con la proporción especificada */
+        grid-gap: 10px; /* Define el espacio entre las columnas */
+        margin-top: 4%; /* Aplica un margen superior del 4% */
+        margin-left: 1%; /* Aplica un margen izquierdo del 1% */
+        margin-right: 1%; /* Aplica un margen derecho del 1% */
+        transition: all 0.3s ease-in-out; /* Añade una transición suave a todos los cambios */
+    }
+    .contenedorPrincipal textarea {
+        margin-top: 80px; /* Añade un margen superior de 80px */
+        height: 350px; /* Establece la altura del área de texto */
+        font-size: 20px; /* Ajusta el tamaño de la fuente a 20px */
+        transition: all 0.3s ease-in-out; /* Aplica una transición suave en los cambios de estilo */
+    }
+    .divisionBotones button {
+        margin-top: 80px; /* Añade un margen superior de 80px a los botones */
+        width: 90%; /* Ajusta el ancho de los botones al 90% del contenedor */
+        transition: all 0.3s ease-in-out; /* Aplica una transición suave a todos los cambios */
+    }
+    .mensaje {
+        margin-top: 50px; /* Añade un margen superior de 50px */
+        padding: 15px; /* Añade un relleno de 15px */
+        background-color: rgba(255, 255, 255, 0.85); /* Añade un fondo blanco con un poco de transparencia */
+        border-radius: 10px; /* Aplica bordes redondeados al mensaje */
+        transition: all 0.3s ease-in-out; /* Añade una transición suave a los cambios */
+    }
+}
+
+/* Adaptación del contenido para dispositivos móviles con un ancho máximo de 1050px */
+@media screen and (max-width: 1050px) {
+    header {
+        font-size: 30px; /* Ajusta el tamaño de la fuente a 30px */
+    }
+    .contenedorPrincipal {
+        display: block; /* Cambia el contenedor a un bloque para alinearlo mejor en dispositivos móviles */
+        width: 100vw; /* Configura el ancho al 100% del ancho de la ventana */
+        height: auto; /* Ajusta la altura automáticamente al contenido */
+        margin-top: 0; /* Elimina el margen superior */
+        padding: 10px; /* Añade un relleno para separar el contenido de los bordes */
+    }
+    .contenedorPrincipal textarea {
+        max-width: 100%; /* Establece el ancho máximo al 100% del contenedor */
+        max-height: 70vh; /* Limita la altura máxima al 70% de la altura de la ventana */
+        width: 85%; /* Configura el ancho al 85% del contenedor */
+        height: 300px; /* Establece la altura fija del textarea */
+        margin: 30px auto; /* Centra el textarea y agrega margen superior e inferior */
+    }
+    .divisionBotones button {
+        margin: 4% auto; /* Centra los botones con margen superior del 4% */
+        width: 60%; /* Configura el ancho de los botones al 60% del contenedor */
+        padding: 10px; /* Añade relleno interno para mejorar la apariencia en dispositivos táctiles */
+    }
+    .mensaje {
+        margin: 20px auto 5px auto; /* Centra el mensaje y añade margen superior e inferior */
+        padding: 10px; /* Añade un relleno para separar el texto de los bordes */
+        background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con mayor opacidad para mejor visibilidad */
+        border-radius: 8px; /* Suaviza los bordes del mensaje */
+        font-size: 24px; /* Ajusta el tamaño de la fuente para mejorar la legibilidad */
+        transition: all 0.3s ease-in-out; /* Añade una transición suave a los cambios */
+    }
+}

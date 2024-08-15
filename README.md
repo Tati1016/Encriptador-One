@@ -1,4 +1,3 @@
-# Encriptador-One
 <h1 align="center"><em>Challenge Encriptador Alura</em></h1>
 
 Encriptador y desencriptador de mensajes que cumple las siguientes condiciones:
